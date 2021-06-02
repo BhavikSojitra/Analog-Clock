@@ -1,0 +1,175 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+body
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #FFFFFF;
+}
+body.light{
+    background: #282828;
+}
+.clock
+{
+    width: 350px;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    background: url(clock.png);
+    background-size: cover;
+    border: 4px solid #379acc;
+    border-radius: 50%;
+    box-shadow: 0px -15px 15px rgba(255,255,255,0.05),
+                inset 0px -15px 15px rgba(255,255,255,0.05),
+                0px 15px 15px rgba(0,0,0,0.3),
+                inset 0 15px 15px rgba(0,0,0,0.3);
+}
+body.light.clock{
+    background: url(clock.png);
+    background-size: cover;
+    border: 4px solid #cad3dc;
+    box-shadow: 0 -15px 15px rgba(255,255,255,0.05),
+                inset 0 -15px 15px rgba(255,255,255,0.05),
+                0 15px 15px rgba(0,0,0,0.3),
+                inset 0 15px 15px rgba(0,0,0,0.3);
+}
+
+.clock:before
+{
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: rgb(206, 14, 14);
+    border-radius: 50%;
+    z-index: 10000;
+}
+
+.clock .hour,
+.clock .min,
+.clock .sec
+{
+    position: absolute;
+}
+.clock .hour, .hr 
+{
+    width: 160px;
+    height: 160px;
+}
+.clock .min, .mn 
+{
+    width: 190px;
+    height: 190px;
+}
+.clock .sec, .sc
+{
+    width: 230px;
+    height: 230px;
+}
+.hr, .mn, .sc
+{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    border-radius: 50%;
+}
+.hr:before
+{
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 80px;
+    background: #379acc;
+    z-index: 10;
+    border-radius: 6px 6px 0 0;
+}
+.mn:before
+{
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 90px;
+    background: #379acc;
+    z-index: 11;
+    border-radius: 6px 6px 0 0;
+}
+.sc:before
+{
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 150px;
+    background: rgb(206, 14, 14);
+    z-index: 12;
+    border-radius: 6px 6px 0 0;
+}
+
+/*toggle btn*/
+.label {
+    position: absolute;
+    cursor: pointer;
+    top: 25px;
+    right: 25px;
+}
+.stylish-toggle {
+    height: 100%;
+    width: 200%;
+    background: #171717;
+    border-radius: 40px;
+    transform: translate3d(-75%, 0, 0);
+    transition: transform 0.4s cubic-bezier(0.85, 0.05, 0.18, 1.35);
+}
+body.light .stylish-toggle {
+    background: #ffffff;
+    box-shadow: 0 0 20px 1px #171717;
+    transition: transform 0.4s cubic-bezier(0.85, 0.05, 0.18, 1.35);
+}
+.toggle-button {
+    isolation: isolate;
+    position: relative;
+    height: 40px;
+    width: 80px;
+    background-color: transparent;
+    border-radius: 35px;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    border: 1px solid #737373;
+    box-shadow: 3px 3px 3px #ffffff73, -3px -3px 3px rgba(94,104,121,0.288);
+}
+body.light .toggle-button {
+    transition: all 0.3s ease;
+    background-color: #2E2E2E;
+}
+.toggle-input {
+    display: none;
+}
+.toggle-input:checked ~ .stylish-toggle {
+    transform: translate3d(25%, 0, 0);
+}
+
+.floating-text {
+	background-color: #379acc;
+	border-radius: 10px 10px 0 0;
+	box-shadow: 0 0 10px 1px #171717;
+	color: #fff;
+	font-family: 'Muli';
+	padding: 7px 15px;
+	position: fixed;
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	text-align: center;
+	z-index: 998;
+}
+
+.floating-text a {
+	color: #FFFFFF;
+	text-decoration: none;
+}
