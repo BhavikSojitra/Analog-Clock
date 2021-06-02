@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Analog Clock</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+
+<body>
+
+    <label for="toggle" class="label">
+        <div class="toggle-button">
+            <input type="checkbox" class="toggle-input" name="toggle" value="toggle" id="toggle" onclick="toggleClass()">
+            <div class="stylish-toggle"></div>
+        </div>
+    </label>
+
+    <div class="clock">
+        <div class="hour">
+            <div class="hr" id="hr"></div>
+        </div>
+        <div class="min">
+            <div class="mn" id="mn"></div>
+        </div>
+        <div class="sec">
+            <div class="sc" id="sc"></div>
+        </div>
+    </div>
+
+    <div class="floating-text">
+        <a>Time🕚 is an illusion🔥</a> 
+    </div>
+
+    <script src="main.js"></script>
+
+</body>
+</html>
